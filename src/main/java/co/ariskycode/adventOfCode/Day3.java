@@ -71,36 +71,28 @@ public class Day3 {
 	private static Set<Coordinate> getPath(String[] wire) {
 		HashSet<Coordinate> path = new HashSet<>();
 		int distance = 0;
-		int xDirection = 0;
-		int yDirection = 0;
 		int x = 0;
 		int y = 0;
 		for (String chord : wire) {
-			xDirection = 0;
-			yDirection = 0;
 			distance = Integer.parseInt(chord.substring(1, chord.length()));
-			switch (chord.substring(0, 1)) {
-			case "R":
-				xDirection = 1;
-				break;
-			case "L":
-				xDirection = -1;
-				break;
-			case "U":
-				yDirection = 1;
-				break;
-			case "D":
-				yDirection = -1;
-				break;
-			default:
-				xDirection = 0;
-				yDirection = 0;
-				System.out.println("Please check chord" + chord);
-				break;
-			}
 			for (int i = 0; i < distance; i++) {
-				x += xDirection;
-				y += yDirection;
+			switch (chord.substring(0, 1)) {
+				case "R":
+					x++;
+					break;
+				case "L":
+					x--;
+					break;
+				case "U":
+					y++;
+					break;
+				case "D":
+					y--;
+					break;
+				default:
+					System.out.println("Please check chord" + chord);
+					break;
+				}
 				path.add(new Coordinate(x, y));
 			}
 		}
@@ -110,36 +102,28 @@ public class Day3 {
 	private static int getDistanceToCoordinateThroughWire(Coordinate coordinate, String[] wire) {
 		int steps = 0;
 		int distance = 0;
-		int xDirection = 0;
-		int yDirection = 0;
 		int x = 0;
 		int y = 0;
 		for (String chord : wire) {
-			xDirection = 0;
-			yDirection = 0;
 			distance = Integer.parseInt(chord.substring(1, chord.length()));
-			switch (chord.substring(0, 1)) {
-			case "R":
-				xDirection = 1;
-				break;
-			case "L":
-				xDirection = -1;
-				break;
-			case "U":
-				yDirection = 1;
-				break;
-			case "D":
-				yDirection = -1;
-				break;
-			default:
-				xDirection = 0;
-				yDirection = 0;
-				System.out.println("Please check chord" + chord);
-				break;
-			}
 			for (int i = 0; i < distance; i++) {
-				x += xDirection;
-				y += yDirection;
+			switch (chord.substring(0, 1)) {
+				case "R":
+					x++;
+					break;
+				case "L":
+					x--;
+					break;
+				case "U":
+					y++;
+					break;
+				case "D":
+					y--;
+					break;
+				default:
+					System.out.println("Please check chord" + chord);
+					break;
+				}
 				steps++;
 				if(coordinate.equals(new Coordinate(x,y))) break; 
 			}
