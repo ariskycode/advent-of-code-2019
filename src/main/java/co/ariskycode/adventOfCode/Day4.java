@@ -8,8 +8,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
- * <h2>AOC Day 4: Password</h2> Find all 6 digit numbers that are ever
- * increasing in the given range
+ * <h2>AOC Day 4: Secure Container</h2> Find all 6 digit numbers that are ever
+ * increasing in the given range and have a distinct pair of matching adjacent digits
  * 
  * @see <a href="https://adventofcode.com/2019/day/4">AOC Day 4</a>
  * 
@@ -21,7 +21,7 @@ public class Day4 {
 	public static void main(String[] args) {
 		System.out.print("Count of ever increasing 6 digit numbers between 382345-843167 : ");
 		System.out.println(partOne());
-		System.out.print("Count of ever increasing 6 digit numbers with a pair of digits between 382345-843167 : ");
+		System.out.print("Count of ever increasing 6 digit numbers with a distinct pair of matching adjacent digits between 382345-843167 : ");
 		System.out.println(partTwo());
 	}
 
@@ -44,7 +44,7 @@ public class Day4 {
 			int[] digits = String.valueOf(password).chars().map(Character::getNumericValue).toArray();
 			if (checkIfNumberisEverIncreasing(digits)) {
 				if (checkIfNumbercontainsDuplicates(digits)) {
-					if (checkIfNumbercontainsaPairofAnyDigit(digits)) {
+					if (checkIfNumbercontainsaDistinctPairofAnyDigit(digits)) {
 						count++;
 					}
 				}
@@ -70,7 +70,7 @@ public class Day4 {
 		return false;
 	}
 
-	private static boolean checkIfNumbercontainsaPairofAnyDigit(int[] digits) {
+	private static boolean checkIfNumbercontainsaDistinctPairofAnyDigit(int[] digits) {
 		List<Integer> digitsCollection = IntStream.of(digits).boxed().collect(Collectors.toList());
 		for (Integer digit : digits) {
 			if (Collections.frequency(digitsCollection, digit) == 2)

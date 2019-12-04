@@ -1,7 +1,7 @@
 package co.ariskycode.adventOfCode;
 
 /**
- * <h2>AOC Day 1: Fuel Calculations</h2> Calculate fuel requirements for Santa
+ * <h2>AOC Day 1: The Tyranny of the Rocket Equation</h2> Calculate fuel requirements for Santa
  * 
  * @see <a href="https://adventofcode.com/2019/day/1">AOC Day 1</a>
  * 

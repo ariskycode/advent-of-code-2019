@@ -7,8 +7,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
- * <h2>AOC Day 3: Manhattan Distance</h2> Calculate Manhattan distance of the
- * closest intersetion point
+ * <h2>AOC Day 3: Crossed Wires</h2> Calculate distance of the
+ * closest intersetion point to the origin
  * 
  * @see <a href="https://adventofcode.com/2019/day/3">AOC Day 3</a>
  * 
